@@ -1,12 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Services from '@/components/Services';
+import Pricing from '@/components/Pricing';
+import Reviews from '@/components/Reviews';
+import About from '@/components/About';
+import FAQ from '@/components/FAQ';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      easing: 'ease-out-cubic',
+      once: true
+    });
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Header />
+      <Hero />
+      <Services />
+      <Pricing />
+      <Reviews />
+      <About />
+      <FAQ />
+      <Contact />
+      <Footer />
     </div>
   );
 };
