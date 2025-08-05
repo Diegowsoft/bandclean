@@ -38,11 +38,14 @@ const Header = () => {
       <div className="container mx-auto section-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <img src="../../public/band-clean-logo.png" alt="Band Clean Logo"/>
-            </div>
-          </div>
+      <div className="flex items-center space-x-2">
+        <img
+          src="/band-clean-logo.png"
+          alt="Band Clean Logo"
+          className="w-32 h-auto" // ou ajuste o tamanho conforme necessário
+        />
+      </div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
