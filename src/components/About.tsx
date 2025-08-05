@@ -77,7 +77,7 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            About <span className="text-primary">Band Clean</span>
+            About <span className="text-primary"><img src="../../assets/band-clean-logo.png" alt="Band Clean Logo" /></span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             We're a Brazilian-led cleaning company in Malta, dedicated to providing exceptional 
