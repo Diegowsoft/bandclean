@@ -42,7 +42,7 @@ const Header = () => {
         <img
           src="/band-clean-logo.png"
           alt="Band Clean Logo"
-          className="w-32 h-auto" // ou ajuste o tamanho conforme necessário
+          className="h-12 w-auto object-contain"
         />
       </div>
 
