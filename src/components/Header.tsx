@@ -42,7 +42,7 @@ const Header = () => {
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">BC</span>
             </div>
-            <span className="text-xl font-bold text-foreground">Band Clean</span>
+            <span className="text-xl font-bold text-foreground"><img src="../../assets/band-clean-logo.png" alt="Band Clean Logo"/></span>
           </div>
 
           {/* Desktop Navigation */}
