@@ -11,10 +11,10 @@
     --foreground: 0 0% 20%;
     
     /* Brand Primary - Vibrant Blue */
-    --primary: 200 92% 45%;  /* #0B96D9 */
+    --primary: 217 91% 60%;  /* #2563eb */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 200 92% 85%;
-    --primary-dark: 200 92% 35%;
+    --primary-light: 217 91% 85%;
+    --primary-dark: 217 91% 50%;
     
     /* Clean White & Grays */
     --card: 0 0% 100%;

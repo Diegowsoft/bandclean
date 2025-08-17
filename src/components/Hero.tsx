@@ -44,17 +44,13 @@ const Hero = () => {
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              We leave your space{' '}
-              <span className="text-primary">sparkling clean</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-inter">
+              A cleaning service{' '}
+              <span className="text-primary">tailored to your needs</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-4">
-              Impeccable cleaning every time!
-            </p>
-            
-            <p className="text-lg text-muted-foreground mb-8">
-              Specialized Airbnb turnover • Home & Office Cleaning • Pet Sitter • Ironing Services
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              Professional, reliable cleaning services across Malta. From homes to Airbnb properties, we deliver spotless results every time.
             </p>
 
             {/* Features */}
@@ -83,16 +79,16 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="500">
               <Button 
                 onClick={handleBooking}
-                className="cta-button text-lg px-8 py-4 h-auto"
+                className="cta-button text-lg px-8 py-4 h-auto font-inter transition-all duration-300 hover:scale-105"
               >
-                Book a Cleaning
+                Book Now
               </Button>
               <Button 
                 variant="outline" 
                 onClick={handleContact}
-                className="text-lg px-8 py-4 h-auto border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="text-lg px-8 py-4 h-auto border-primary text-primary hover:bg-primary hover:text-primary-foreground font-inter transition-all duration-300 hover:scale-105"
               >
-                Contact Us
+                Learn More
               </Button>
             </div>
           </div>
