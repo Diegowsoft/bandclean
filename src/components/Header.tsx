@@ -53,7 +53,9 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className={`${
+                  isScrolled ? 'text-foreground hover:text-primary' : 'text-blue-500 hover:text-blue-400'
+                } transition-colors duration-200 font-medium`}
               >
                 {item.name}
               </button>
