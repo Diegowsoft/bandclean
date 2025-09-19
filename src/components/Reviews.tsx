@@ -18,7 +18,7 @@ const Reviews = () => {
       rating: 5,
       text: "I booked a 6-hour cleaning package for my home and I was amazed by the results! The team was incredibly thorough and professional. Every corner of my house was spotless when they finished.",
       service: "6-Hour Cleaning Package",
-      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop&crop=center"
+      image: "/src/assets/testimonial-home-cleaning.jpg"
     },
     {
       name: "Ivan Laurenti",
@@ -26,7 +26,7 @@ const Reviews = () => {
       rating: 5,
       text: "The 4-hour cleaning package was perfect for my Airbnb turnover. Band Clean completed everything efficiently and my guests always comment on how clean and welcoming the space feels.",
       service: "4-Hour Cleaning Package", 
-      image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop&crop=center"
+      image: "/src/assets/testimonial-airbnb.jpg"
     },
     {
       name: "Emma Rodriguez",
@@ -34,7 +34,7 @@ const Reviews = () => {
       rating: 5,
       text: "The pet sitting service is absolutely amazing! They took care of my dog Luna with so much love and sent regular photo updates. Highly recommend!",
       service: "Pet Sitting",
-      image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&h=300&fit=crop&crop=center"
+      image: "/src/assets/testimonial-pet-sitting.jpg"
     }
   ];
 
