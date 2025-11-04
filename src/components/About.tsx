@@ -119,6 +119,30 @@ const About = () => {
           </div>
         </div>
 
+        {/* Service Area Map */}
+        <div className="mb-20" data-aos="fade-up">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-semibold mb-4">
+              Our <span className="text-primary">Service Area</span>
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We proudly serve all of Malta, bringing our professional cleaning services to every corner of this beautiful island.
+            </p>
+          </div>
+          <Card className="overflow-hidden shadow-medium">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207033.65902555674!2d14.315260999999998!3d35.937496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e45281d8647c5%3A0x745ad4f7cbb5a97!2sMalta!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
+          </Card>
+        </div>
+
         {/* Values */}
         <div className="mb-20">
           <h3 className="text-2xl font-semibold text-center mb-12" data-aos="fade-up">
