@@ -125,26 +125,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Extra Services */}
-        <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="400">
-          <div className="bg-card rounded-2xl p-8 shadow-soft border">
-            <h3 className="text-2xl font-semibold mb-4">Additional Services</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-center justify-center space-x-3 p-4 bg-accent/50 rounded-lg">
-                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-medium">Cleaning Kit Available (+€25)</span>
-              </div>
-              <div className="flex items-center justify-center space-x-3 p-4 bg-accent/50 rounded-lg">
-                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-medium">Brazilian Professional Team</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -16,9 +16,16 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
+    { name: 'Services', href: '#services' },
     { name: 'Reviews', href: '#reviews' },
     { name: 'About', href: '#about' }
   ];
+
+  const handleContactClick = () => {
+    const phone = "+35699027897";
+    const message = "Hi! I'd like to get in touch with Band Clean.";
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+  };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -57,6 +64,14 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
+            <button
+              onClick={handleContactClick}
+              className={`${
+                isScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-white/80'
+              } transition-colors duration-200 font-medium`}
+            >
+              Contact
+            </button>
           </nav>
 
           {/* Contact Info & CTA */}
@@ -92,6 +107,12 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={handleContactClick}
+                className="px-6 py-3 text-left text-foreground hover:text-primary hover:bg-accent/50 transition-colors duration-200"
+              >
+                Contact
+              </button>
               <div className="px-6 py-3 border-t border-border mt-2">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-3">
                   <Phone className="w-4 h-4" />
