@@ -32,7 +32,6 @@ const Footer = () => {
     support: [
       { name: 'Contact Us', href: '#contact' },
       { name: 'Book Service', href: '#contact' },
-      { name: 'Emergency Service', href: '#contact' },
       { name: 'Service Areas', href: '#contact' }
     ]
   };
@@ -61,11 +60,12 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BC</span>
-              </div>
-              <span className="text-2xl font-bold text-background">Band Clean</span>
+            <div className="mb-6">
+              <img 
+                src="/band-clean-logo-footer.png" 
+                alt="Band Clean" 
+                className="h-16 w-auto object-contain"
+              />
             </div>
             
             <p className="text-background/80 mb-6 leading-relaxed">
@@ -93,10 +93,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <div>
-                  <p className="text-background font-medium">+356 9902 7897</p>
-                  <p className="text-background font-medium">+356 7959 8763</p>
-                </div>
+                <p className="text-background font-medium">+356 9902 7897</p>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-primary" />
@@ -159,23 +156,13 @@ const Footer = () => {
               ))}
             </ul>
 
-            <div className="space-y-3">
-              <Button 
-                onClick={handleWhatsApp}
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                <MessageSquare className="w-4 h-4 mr-2" />
-                WhatsApp Us
-              </Button>
-              <Button 
-                onClick={() => window.open('tel:+35699027897')}
-                variant="outline"
-                className="w-full border-background/20 text-background hover:bg-background hover:text-foreground"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
-            </div>
+            <Button 
+              onClick={handleWhatsApp}
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <MessageSquare className="w-4 h-4 mr-2" />
+              WhatsApp Us
+            </Button>
           </div>
         </div>
       </div>

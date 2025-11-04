@@ -80,7 +80,10 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span>+356 9902 7897</span>
             </div>
-            <Button className="cta-button">
+            <Button 
+              onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B35699027897&text=Hi%21+I%27d+like+to+learn+more+about+Band+Clean+services.', '_blank')}
+              className="cta-button"
+            >
               Book a Cleaning
             </Button>
           </div>
@@ -118,7 +121,10 @@ const Header = () => {
                   <Phone className="w-4 h-4" />
                   <span>+356 9902 7897</span>
                 </div>
-                <Button className="cta-button w-full">
+                <Button 
+                  onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B35699027897&text=Hi%21+I%27d+like+to+learn+more+about+Band+Clean+services.', '_blank')}
+                  className="cta-button w-full"
+                >
                   Book a Cleaning
                 </Button>
               </div>
