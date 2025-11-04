@@ -16,11 +16,8 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Pricing', href: '#pricing' },
     { name: 'Reviews', href: '#reviews' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About', href: '#about' }
   ];
 
   const scrollToSection = (href: string) => {
@@ -40,9 +37,9 @@ const Header = () => {
           {/* Logo */}
       <div className="flex items-center space-x-2">
         <img
-          src="/band-clean-logo.png"
+          src="/band-clean-logo-large.png"
           alt="Band Clean Logo"
-          className="h-12 w-auto object-contain"
+          className="h-12 w-auto md:h-16 object-contain"
         />
       </div>
 
