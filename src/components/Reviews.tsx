@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star } from 'lucide-react';
+import { Star, Facebook, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Import Swiper styles
@@ -13,28 +13,39 @@ import 'swiper/css/pagination';
 const Reviews = () => {
   const testimonials = [
     {
-      name: "Ester Scicluna",
-      location: "Sliema • Home Cleaning",
+      name: "Juliana Cortes",
       rating: 5,
-      text: "I booked a 6-hour cleaning package for my home and I was amazed by the results! The team was incredibly thorough and professional. Every corner of my house was spotless when they finished.",
-      service: "6-Hour Cleaning Package",
-      image: "/testimonial-home-cleaning.jpg"
+      text: "Highly recommended!!! Martina and all the girls. Her work is very reliable, efficient and made my place spotless! Thank you!!!"
     },
     {
-      name: "Ivan Laurenti",
-      location: "St. Julian's • Airbnb Host",
+      name: "Luis Puliciccihio",
       rating: 5,
-      text: "The 4-hour cleaning package was perfect for my Airbnb turnover. Band Clean completed everything efficiently and my guests always comment on how clean and welcoming the space feels.",
-      service: "4-Hour Cleaning Package", 
-      image: "/testimonial-airbnb.jpg"
+      text: "This is by far the best cleaning company in Malta! Their team is professional, reliable, and always delivers excellent results. Highly recommended for anyone looking for top-quality cleaning services."
     },
     {
-      name: "Emma Rodriguez",
-      location: "Valletta • Pet Owner",
+      name: "Nicole Pirotta",
       rating: 5,
-      text: "The pet sitting service is absolutely amazing! They took care of my dog Luna with so much love and sent regular photo updates. Highly recommend!",
-      service: "Pet Sitting",
-      image: "/testimonial-pet-sitting.jpg"
+      text: "I highly recommend Band Clean, they are professional, efficient and do a very good job in a short amount of time."
+    },
+    {
+      name: "Tiago Garbim",
+      rating: 5,
+      text: "Fantastic service! Martina was incredibly professional and left my apartment spotless. She brought a staff member with her, and she was just as great—thorough, efficient, and friendly. The quality of their work is top-notch, and their positive attitude made the whole experience even better. I'll definitely be reaching out to them again. Thank you so much!"
+    },
+    {
+      name: "Petros Nikou",
+      rating: 5,
+      text: "Great cleaning and ironing services. Martina and her team are just INCREDIBLE. They are fast, efficient and kind! Normal prices, always meeting our needs, and easy to schedule an appointment."
+    },
+    {
+      name: "Mariana Querino",
+      rating: 5,
+      text: "Very efficient, friendly and detailed cleaning! I highly recommend!"
+    },
+    {
+      name: "Victor",
+      rating: 5,
+      text: "Friendly and professional. I really recommend their services!"
     }
   ];
 
@@ -89,15 +100,6 @@ const Reviews = () => {
               <SwiperSlide key={index}>
                 <Card className="bg-card/90 backdrop-blur-sm border-0 shadow-soft h-full">
                   <CardContent className="p-8">
-                    <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-muted">
-                      <img 
-                        src={testimonial.image} 
-                        alt={`${testimonial.name} cleaning service`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    
                     <div className="flex justify-center mb-4">
                       {[...Array(5)].map((_, i) => (
                         <Star
@@ -107,7 +109,7 @@ const Reviews = () => {
                       ))}
                     </div>
                     
-                    <blockquote className="text-lg text-foreground mb-6 leading-relaxed text-center">
+                    <blockquote className="text-lg text-foreground mb-6 leading-relaxed text-center min-h-[120px]">
                       "{testimonial.text}"
                     </blockquote>
                     
@@ -115,16 +117,10 @@ const Reviews = () => {
                       <h4 className="font-semibold text-lg text-foreground mb-1">
                         {testimonial.name}
                       </h4>
-                      <p className="text-muted-foreground mb-3">
-                        {testimonial.location}
-                      </p>
-                      <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
-                        {testimonial.service}
-                      </span>
                       
                       <Button 
                         onClick={handleBookNow}
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-inter transition-all duration-300 hover:scale-105"
+                        className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground font-inter transition-all duration-300 hover:scale-105"
                       >
                         Book Now
                       </Button>
@@ -138,6 +134,24 @@ const Reviews = () => {
           {/* Custom Navigation Buttons */}
           <div className="swiper-button-prev !text-primary !w-12 !h-12 !mt-0 !left-4 !top-1/2 !-translate-y-1/2 after:!text-xl after:!font-bold"></div>
           <div className="swiper-button-next !text-primary !w-12 !h-12 !mt-0 !right-4 !top-1/2 !-translate-y-1/2 after:!text-xl after:!font-bold"></div>
+        </div>
+
+        {/* Social Media Buttons */}
+        <div className="flex justify-center gap-4 mb-12">
+          <Button
+            onClick={() => window.open('https://www.facebook.com/people/Band-Clean/61562921752290/?sk=reviews', '_blank')}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-inter transition-all duration-300 hover:scale-105"
+          >
+            <Facebook className="w-5 h-5 mr-2" />
+            View Facebook Reviews
+          </Button>
+          <Button
+            onClick={() => window.open('https://www.instagram.com/band_clean/', '_blank')}
+            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-inter transition-all duration-300 hover:scale-105"
+          >
+            <Instagram className="w-5 h-5 mr-2" />
+            Follow on Instagram
+          </Button>
         </div>
 
         {/* Statistics */}

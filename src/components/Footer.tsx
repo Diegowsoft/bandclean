@@ -8,7 +8,9 @@ import {
   Shield,
   Heart,
   Star,
-  ChevronUp
+  ChevronUp,
+  Facebook,
+  Instagram
 } from 'lucide-react';
 
 const Footer = () => {
@@ -171,11 +173,29 @@ const Footer = () => {
 
             <Button 
               onClick={handleWhatsApp}
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 mb-4"
             >
               <MessageSquare className="w-4 h-4 mr-2" />
               WhatsApp Us
             </Button>
+
+            {/* Social Media Buttons */}
+            <div className="flex gap-2">
+              <Button
+                onClick={() => window.open('https://www.facebook.com/people/Band-Clean/61562921752290/?sk=reviews', '_blank')}
+                variant="outline"
+                className="flex-1 border-background/20 text-background hover:bg-background/10"
+              >
+                <Facebook className="w-4 h-4" />
+              </Button>
+              <Button
+                onClick={() => window.open('https://www.instagram.com/band_clean/', '_blank')}
+                variant="outline"
+                className="flex-1 border-background/20 text-background hover:bg-background/10"
+              >
+                <Instagram className="w-4 h-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
