@@ -7,7 +7,8 @@ import {
   Heart,
   ArrowRight,
   Clock,
-  CheckCircle
+  CheckCircle,
+  Building2
 } from 'lucide-react';
 
 const Services = () => {
@@ -43,6 +44,14 @@ const Services = () => {
       features: ['Walks and playtime', 'Feeding & grooming', 'Medication if needed', 'Lots of love and care!'],
       price: '€20/hour',
       delay: 300
+    },
+    {
+      icon: Building2,
+      title: 'Limpeza de Condomínio',
+      description: 'Serviço profissional de limpeza para condomínios, mantendo áreas comuns impecáveis e acolhedoras.',
+      features: ['Limpeza de áreas comuns', 'Elevadores e espelhos', 'Escadas e corrimãos', 'Manutenção regular'],
+      price: 'Custom quote',
+      delay: 400
     }
   ];
 
@@ -67,7 +76,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {services.map((service, index) => (
             <Card 
               key={service.title}
