@@ -47,9 +47,9 @@ const Services = () => {
     },
     {
       icon: Building2,
-      title: 'Limpeza de Condomínio',
-      description: 'Serviço profissional de limpeza para condomínios, mantendo áreas comuns impecáveis e acolhedoras.',
-      features: ['Limpeza de áreas comuns', 'Elevadores e espelhos', 'Escadas e corrimãos', 'Manutenção regular'],
+      title: 'Condominium Cleaning',
+      description: 'Professional cleaning service for condominiums, keeping common areas spotless and welcoming.',
+      features: ['Common area cleaning', 'Elevators & mirrors', 'Stairs & handrails', 'Regular maintenance'],
       price: 'Custom quote',
       delay: 400
     }
