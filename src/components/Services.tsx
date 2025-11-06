@@ -49,7 +49,7 @@ const Services = () => {
       icon: Building2,
       title: 'Condominium Cleaning',
       description: 'Professional cleaning service for condominiums, keeping common areas spotless and welcoming.',
-      features: ['Common area cleaning', 'Elevators & mirrors', 'Stairs & handrails', 'Regular maintenance'],
+      features: ['Common area cleaning', 'Elevators & mirrors', 'Stairs & handrails'],
       price: 'Custom quote',
       delay: 400
     }
