@@ -1,8 +1,8 @@
-import { useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Facebook, Instagram } from 'lucide-react';
+import { Star, Facebook, Instagram, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Import Swiper styles
@@ -11,6 +11,21 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const Reviews = () => {
+  const [expandedReviews, setExpandedReviews] = useState<Set<number>>(new Set());
+  const MAX_CHARS = 150;
+
+  const toggleReview = (index: number) => {
+    setExpandedReviews(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
+
   const testimonials = [
     {
       name: "Juliana Cortes",
@@ -96,39 +111,57 @@ const Reviews = () => {
             loop={true}
             className="testimonials-swiper"
           >
-            {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <Card className="bg-card/90 backdrop-blur-sm border-0 shadow-soft h-full">
-                  <CardContent className="p-8">
-                    <div className="flex justify-center mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
-                    
-                    <blockquote className="text-lg text-foreground mb-6 leading-relaxed text-center min-h-[120px]">
-                      "{testimonial.text}"
-                    </blockquote>
-                    
-                    <div className="text-center border-t pt-6">
-                      <h4 className="font-semibold text-lg text-foreground mb-1">
-                        {testimonial.name}
-                      </h4>
+            {testimonials.map((testimonial, index) => {
+              const isExpanded = expandedReviews.has(index);
+              const isLong = testimonial.text.length > MAX_CHARS;
+              const displayText = isExpanded || !isLong 
+                ? testimonial.text 
+                : testimonial.text.slice(0, MAX_CHARS) + '...';
+
+              return (
+                <SwiperSlide key={index}>
+                  <Card className="bg-card/90 backdrop-blur-sm border-0 shadow-soft h-full">
+                    <CardContent className="p-8 flex flex-col">
+                      <div className="flex justify-center mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                          />
+                        ))}
+                      </div>
                       
-                      <Button 
-                        onClick={handleBookNow}
-                        className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground font-inter transition-all duration-300 hover:scale-105"
-                      >
-                        Book Now
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </SwiperSlide>
-            ))}
+                      <blockquote className="text-lg text-foreground mb-4 leading-relaxed text-center flex-grow">
+                        "{displayText}"
+                      </blockquote>
+                      
+                      {isLong && (
+                        <button
+                          onClick={() => toggleReview(index)}
+                          className="text-primary hover:text-primary/80 text-sm font-medium mb-4 flex items-center justify-center gap-1 transition-colors"
+                        >
+                          {isExpanded ? 'Show Less' : 'Learn More'}
+                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                        </button>
+                      )}
+                      
+                      <div className="text-center border-t pt-6 mt-auto">
+                        <h4 className="font-semibold text-lg text-foreground mb-1">
+                          {testimonial.name}
+                        </h4>
+                        
+                        <Button 
+                          onClick={handleBookNow}
+                          className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground font-inter transition-all duration-300 hover:scale-105"
+                        >
+                          Book Now
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
 
           {/* Custom Navigation Buttons */}
