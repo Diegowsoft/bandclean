@@ -17,7 +17,7 @@ const Services = () => {
       title: 'Home & Office Cleaning',
       description: 'Complete cleaning service for residential and commercial spaces with attention to every detail.',
       features: ['Dust and wipe surfaces', 'Mop and vacuum floors', 'Kitchen & bathroom deep clean', 'General organization'],
-      price: '€12/hour',
+      price: '€15/hour',
       delay: 0
     },
     {

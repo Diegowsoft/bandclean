@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="mb-6">
+            <div className="mb-6 bg-white rounded-lg p-3 inline-block">
               <img 
                 src="/band-clean-logo-footer.png" 
                 alt="Band Clean" 
@@ -93,7 +93,20 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <p className="text-background font-medium">+356 9902 7897</p>
+                <div className="space-y-1">
+                  <button
+                    onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B35699027897', '_blank')}
+                    className="block text-background font-medium hover:text-primary transition-colors"
+                  >
+                    +356 9902 7897
+                  </button>
+                  <button
+                    onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B35699049434', '_blank')}
+                    className="block text-background font-medium hover:text-primary transition-colors"
+                  >
+                    +356 9904 9434
+                  </button>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-primary" />

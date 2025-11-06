@@ -166,38 +166,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Team */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-12" data-aos="fade-up">
-            Meet Our <span className="text-primary">Professional Team</span>
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card 
-                key={member.name}
-                className="text-center p-6 interactive-card"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <h4 className="text-lg font-semibold mb-2 text-foreground">{member.name}</h4>
-                <p className="text-primary font-medium mb-2">{member.role}</p>
-                <p className="text-sm text-muted-foreground mb-2">{member.experience}</p>
-                <p className="text-sm text-muted-foreground italic">{member.specialty}</p>
-                <div className="flex justify-center mt-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-warning fill-current" />
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* Stats */}
         <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-white text-center mb-20" data-aos="fade-up">
           <h3 className="text-2xl md:text-3xl font-bold mb-8">Our Impact in Numbers</h3>
