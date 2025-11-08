@@ -121,7 +121,7 @@ const Reviews = () => {
               return (
                 <SwiperSlide key={index}>
                   <Card className="bg-card/90 backdrop-blur-sm border-0 shadow-soft h-full">
-                    <CardContent className="p-8 flex flex-col">
+                    <CardContent className="p-8 flex flex-col h-full">
                       <div className="flex justify-center mb-4">
                         {[...Array(5)].map((_, i) => (
                           <Star
@@ -131,19 +131,21 @@ const Reviews = () => {
                         ))}
                       </div>
                       
-                      <blockquote className="text-lg text-foreground mb-4 leading-relaxed text-center flex-grow">
-                        "{displayText}"
-                      </blockquote>
-                      
-                      {isLong && (
-                        <button
-                          onClick={() => toggleReview(index)}
-                          className="text-primary hover:text-primary/80 text-sm font-medium mb-4 flex items-center justify-center gap-1 transition-colors"
-                        >
-                          {isExpanded ? 'Show Less' : 'Learn More'}
-                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
-                        </button>
-                      )}
+                      <div className="flex-grow flex flex-col">
+                        <blockquote className="text-lg text-foreground mb-4 leading-relaxed text-center">
+                          "{displayText}"
+                        </blockquote>
+                        
+                        {isLong && (
+                          <button
+                            onClick={() => toggleReview(index)}
+                            className="text-primary hover:text-primary/80 text-sm font-medium mb-4 flex items-center justify-center gap-1 transition-colors"
+                          >
+                            {isExpanded ? 'Show Less' : 'Learn More'}
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                          </button>
+                        )}
+                      </div>
                       
                       <div className="text-center border-t pt-6 mt-auto">
                         <h4 className="font-semibold text-lg text-foreground mb-1">
