@@ -172,7 +172,7 @@ const Reviews = () => {
         </div>
 
         {/* Social Media Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-col-reverse md:flex-row justify-center gap-4 mb-12">
           <Button
             onClick={() => window.open('https://www.facebook.com/people/Band-Clean/61562921752290/?sk=reviews', '_blank')}
             className="bg-blue-600 hover:bg-blue-700 text-white font-inter transition-all duration-300 hover:scale-105"
