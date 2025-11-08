@@ -113,25 +113,25 @@ const VideoCarousel = () => {
 
             {/* Content */}
             <div className="relative z-10 h-full flex items-center justify-center px-4">
-              <div className="text-center max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
                   {slide.title}
                 </h2>
                 
-                <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-8">
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 text-center">
                   {slide.description}
                 </p>
 
                 {slide.features.length > 0 && (
-                  <div className="mb-8 space-y-3">
-                    <p className="text-white/90 font-medium mb-4">
+                  <div className="mb-8 space-y-3 max-w-2xl mx-auto">
+                    <p className="text-white/90 font-medium mb-4 text-left">
                       {index === 1 ? "We maintain your common areas with care:" : 
                        index === 2 ? "We handle every piece with precision:" :
                        index === 3 ? "Our professional team gets your property guest-ready with:" :
                        index === 4 ? "Our trusted sitters provide:" :
                        "We take care of every detail:"}
                     </p>
-                    <div className="flex flex-col items-center gap-2">
+                    <div className="flex flex-col items-start gap-2">
                       {slide.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-3 text-white">
                           <Check className="w-5 h-5 text-[#00c853] flex-shrink-0" />
@@ -142,12 +142,14 @@ const VideoCarousel = () => {
                   </div>
                 )}
 
-                <Button
-                  onClick={handleBookNow}
-                  className="bg-[#0e8ed2] hover:bg-[#0c7abc] text-white px-8 py-6 text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105"
-                >
-                  Book Now
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    onClick={handleBookNow}
+                    className="bg-[#0e8ed2] hover:bg-[#0c7abc] text-white px-8 py-6 text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105"
+                  >
+                    Book Now
+                  </Button>
+                </div>
               </div>
             </div>
           </SwiperSlide>
