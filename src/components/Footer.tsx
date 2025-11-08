@@ -183,15 +183,13 @@ const Footer = () => {
             <div className="flex gap-2">
               <Button
                 onClick={() => window.open('https://www.facebook.com/people/Band-Clean/61562921752290/?sk=reviews', '_blank')}
-                variant="outline"
-                className="flex-1 border-background/20 text-background hover:bg-background/10"
+                className="flex-1 bg-[#1877F2] text-white hover:bg-[#1877F2]/90 border-0"
               >
                 <Facebook className="w-4 h-4" />
               </Button>
               <Button
                 onClick={() => window.open('https://www.instagram.com/band_clean/', '_blank')}
-                variant="outline"
-                className="flex-1 border-background/20 text-background hover:bg-background/10"
+                className="flex-1 bg-[#E4405F] text-white hover:bg-[#E4405F]/90 border-0"
               >
                 <Instagram className="w-4 h-4" />
               </Button>
