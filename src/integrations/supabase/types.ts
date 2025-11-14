@@ -14,16 +14,227 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      addresses: {
+        Row: {
+          city: string | null
+          client_id: string
+          id: string
+          state: string | null
+          street: string | null
+          zip_code: string | null
+        }
+        Insert: {
+          city?: string | null
+          client_id: string
+          id?: string
+          state?: string | null
+          street?: string | null
+          zip_code?: string | null
+        }
+        Update: {
+          city?: string | null
+          client_id?: string
+          id?: string
+          state?: string | null
+          street?: string | null
+          zip_code?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "addresses_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      bookings: {
+        Row: {
+          address_id: string | null
+          booking_date: string
+          cleaner_id: string | null
+          cleaner_paid: boolean | null
+          cleaner_value: number
+          client_id: string
+          client_paid: boolean | null
+          client_value: number
+          created_at: string | null
+          id: string
+          profit: number | null
+          service_id: string
+          status: string | null
+        }
+        Insert: {
+          address_id?: string | null
+          booking_date: string
+          cleaner_id?: string | null
+          cleaner_paid?: boolean | null
+          cleaner_value?: number
+          client_id: string
+          client_paid?: boolean | null
+          client_value?: number
+          created_at?: string | null
+          id?: string
+          profit?: number | null
+          service_id: string
+          status?: string | null
+        }
+        Update: {
+          address_id?: string | null
+          booking_date?: string
+          cleaner_id?: string | null
+          cleaner_paid?: boolean | null
+          cleaner_value?: number
+          client_id?: string
+          client_paid?: boolean | null
+          client_value?: number
+          created_at?: string | null
+          id?: string
+          profit?: number | null
+          service_id?: string
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_address_id_fkey"
+            columns: ["address_id"]
+            isOneToOne: false
+            referencedRelation: "addresses"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookings_cleaner_id_fkey"
+            columns: ["cleaner_id"]
+            isOneToOne: false
+            referencedRelation: "cleaners"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookings_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookings_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      cleaners: {
+        Row: {
+          id: string
+          name: string
+          payment_details: string | null
+          phone: string | null
+          user_id: string | null
+        }
+        Insert: {
+          id?: string
+          name: string
+          payment_details?: string | null
+          phone?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          id?: string
+          name?: string
+          payment_details?: string | null
+          phone?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      clients: {
+        Row: {
+          created_at: string | null
+          email: string | null
+          id: string
+          name: string
+          phone: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          name: string
+          phone?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          name?: string
+          phone?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      services: {
+        Row: {
+          base_price: number
+          description: string | null
+          id: string
+          name: string
+        }
+        Insert: {
+          base_price: number
+          description?: string | null
+          id?: string
+          name: string
+        }
+        Update: {
+          base_price?: number
+          description?: string | null
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string | null
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_financial_dashboard: { Args: never; Returns: Json }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "cleaner" | "client"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +361,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "cleaner", "client"],
+    },
   },
 } as const
