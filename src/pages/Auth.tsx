@@ -20,7 +20,6 @@ const signupSchema = z.object({
   name: z.string().min(3, 'Nome deve ter no mínimo 3 caracteres'),
   email: z.string().email('Email inválido'),
   password: z.string().min(6, 'Senha deve ter no mínimo 6 caracteres'),
-  role: z.enum(['admin', 'cleaner', 'client']),
 });
 
 type LoginFormData = z.infer<typeof loginSchema>;
@@ -44,9 +43,6 @@ export default function Auth() {
 
   const signupForm = useForm<SignupFormData>({
     resolver: zodResolver(signupSchema),
-    defaultValues: {
-      role: 'client',
-    },
   });
 
   const onLogin = async (data: LoginFormData) => {
@@ -63,7 +59,8 @@ export default function Auth() {
   };
 
   const onSignup = async (data: SignupFormData) => {
-    const { error } = await signUp(data.email, data.password, data.name, data.role);
+    // SECURITY: All public signups are created as 'client' role by default
+    const { error } = await signUp(data.email, data.password, data.name);
     if (error) {
       toast({
         title: 'Erro ao criar conta',
@@ -73,7 +70,7 @@ export default function Auth() {
     } else {
       toast({
         title: 'Conta criada com sucesso!',
-        description: 'Você pode fazer login agora.',
+        description: 'Você foi registrado como cliente.',
       });
       setIsLogin(true);
     }
@@ -169,21 +166,11 @@ export default function Auth() {
                   <p className="text-sm text-destructive">{signupForm.formState.errors.password.message}</p>
                 )}
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="role">Tipo de Usuário</Label>
-                <Select
-                  onValueChange={(value) => signupForm.setValue('role', value as any)}
-                  defaultValue="client"
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Selecione o tipo" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="client">Cliente</SelectItem>
-                    <SelectItem value="cleaner">Profissional de Limpeza</SelectItem>
-                    <SelectItem value="admin">Administrador</SelectItem>
-                  </SelectContent>
-                </Select>
+              {/* SECURITY: Role selector removed - all public signups are 'client' by default */}
+              <div className="rounded-md bg-muted p-3">
+                <p className="text-sm text-muted-foreground">
+                  💡 Você será registrado como <strong>Cliente</strong>. Para outros tipos de acesso (Profissional ou Administrador), entre em contato com o administrador do sistema.
+                </p>
               </div>
               <Button type="submit" className="w-full">
                 Criar Conta

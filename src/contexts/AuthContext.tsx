@@ -8,7 +8,7 @@ interface AuthContextType {
   userRole: 'admin' | 'cleaner' | 'client' | null;
   loading: boolean;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
-  signUp: (email: string, password: string, name: string, role: 'admin' | 'cleaner' | 'client') => Promise<{ error: any }>;
+  signUp: (email: string, password: string, name: string) => Promise<{ error: any }>;
   signOut: () => Promise<void>;
 }
 
@@ -71,8 +71,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return { error };
   };
 
-  const signUp = async (email: string, password: string, name: string, role: 'admin' | 'cleaner' | 'client') => {
+  const signUp = async (email: string, password: string, name: string) => {
     const redirectUrl = `${window.location.origin}/`;
+    
+    // SECURITY: All public signups are created as 'client' by default
+    // Only admins can promote users to 'cleaner' or 'admin' roles
+    const role = 'client';
     
     const { data: authData, error: authError } = await supabase.auth.signUp({
       email,
@@ -87,7 +91,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     if (authError) return { error: authError };
 
-    // Create role entry
+    // Create role entry (always 'client' for public signups)
     if (authData.user) {
       const { error: roleError } = await supabase
         .from('user_roles')
@@ -95,25 +99,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (roleError) return { error: roleError };
 
-      // Create profile based on role
-      if (role === 'client') {
-        const { error: profileError } = await supabase
-          .from('clients')
-          .insert({ 
-            user_id: authData.user.id, 
-            name,
-            email 
-          });
-        if (profileError) return { error: profileError };
-      } else if (role === 'cleaner') {
-        const { error: profileError } = await supabase
-          .from('cleaners')
-          .insert({ 
-            user_id: authData.user.id, 
-            name 
-          });
-        if (profileError) return { error: profileError };
-      }
+      // Create client profile
+      const { error: profileError } = await supabase
+        .from('clients')
+        .insert({ 
+          user_id: authData.user.id, 
+          name,
+          email 
+        });
+      if (profileError) return { error: profileError };
     }
 
     return { error: null };
