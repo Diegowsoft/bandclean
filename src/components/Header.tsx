@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Phone, LogIn } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,14 +81,6 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span>+356 9902 7897</span>
             </div>
-            <Button 
-              onClick={() => navigate('/auth')}
-              variant="outline"
-              className="gap-2"
-            >
-              <LogIn className="w-4 h-4" />
-              Sistema
-            </Button>
             <Button 
               onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B35699027897&text=Hi%21+I%27d+like+to+learn+more+about+Band+Clean+services.', '_blank')}
               className="cta-button"
