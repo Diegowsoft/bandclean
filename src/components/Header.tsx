@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +21,8 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'Services', href: '#services' },
     { name: 'Reviews', href: '#reviews' },
-    { name: 'About', href: '#about' }
+    { name: 'About', href: '#about' },
+    { name: 'Careers', href: '/careers' },
   ];
 
   const handleContactClick = () => {
@@ -29,9 +32,19 @@ const Header = () => {
   };
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('/')) {
+      navigate(href);
+      setIsMenuOpen(false);
+      return;
+    }
+    // If we're not on the homepage, go home first then scroll
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
   };
