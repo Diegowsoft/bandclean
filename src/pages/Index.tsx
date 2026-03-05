@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/contexts/AuthContext';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -13,9 +11,6 @@ import About from '@/components/About';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const { user } = useAuth();
-  const navigate = useNavigate();
-
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -23,12 +18,7 @@ const Index = () => {
       easing: 'ease-out-cubic',
       once: true
     });
-    
-    // Redirect authenticated users to dashboard
-    if (user) {
-      navigate('/dashboard');
-    }
-  }, [user, navigate]);
+  }, []);
 
   return (
     <div className="min-h-screen">
