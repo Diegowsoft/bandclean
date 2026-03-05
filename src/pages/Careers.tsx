@@ -122,24 +122,22 @@ const Careers = () => {
 
       {/* ─── 1. HERO SECTION ─── */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0 -z-10">
-          <img
-            src={careersHero}
-            alt="Band Clean professional team collaborating"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/40" />
-        </div>
+        {/* Background image with dark overlay for text contrast */}
+        <img
+          src={careersHero}
+          alt="Band Clean professional team collaborating"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-black/40" />
 
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center md:text-left max-w-4xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary-foreground mb-6">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-white mb-6">
             <Sparkles className="w-4 h-4" /> We're Hiring
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
             Build Your Career in Malta with an International Cleaning&nbsp;Team
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 max-w-2xl mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-8">
             We're looking for dedicated people to join our Professional Service
             team. No matter where you come from — if you take pride in your work,
             there's a place for you at Band&nbsp;Clean.
