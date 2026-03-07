@@ -18,10 +18,10 @@ const Hero = () => {
 
   const heroSlides = [
     { image: heroSlide1, title: "Pristine Living Spaces" },
-    { image: heroSlide2, title: "Spotless Kitchens" },
-    { image: heroSlide3, title: "Fresh Bedrooms" },
-    { image: heroSlide4, title: "Clean Bathrooms" },
-    { image: heroSlide5, title: "Modern Apartments" }
+    { image: heroSlide2, title: "Spotless Offices" },
+    { image: heroSlide3, title: "Elegant Common Areas" },
+    { image: heroSlide4, title: "Clean Elevators & Lobbies" },
+    { image: heroSlide5, title: "Stairs & Handrails" }
   ];
 
   return (
