@@ -146,7 +146,7 @@ const Careers = () => {
 
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center md:text-left max-w-4xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-white mb-6">
-            <Sparkles className="w-4 h-4" /> We're Hiring
+            <Sparkles className="w-4 h-4" /> Labor Service
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
             Join Our Service Team in&nbsp;Malta

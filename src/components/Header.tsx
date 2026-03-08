@@ -22,7 +22,7 @@ const Header = () => {
     { name: 'Services', href: '#services' },
     { name: 'Reviews', href: '#reviews' },
     { name: 'About', href: '#about' },
-    { name: 'Careers', href: '/careers' },
+    { name: 'Work With Us', href: '/careers' },
   ];
 
   const handleContactClick = () => {
