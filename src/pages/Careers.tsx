@@ -35,66 +35,80 @@ import Footer from '@/components/Footer';
 import careersHero from '@/assets/careers-hero.jpg';
 
 /* ───────────────────────────────────────────────
-   Careers / Join Us — Band Clean Malta
-   Target audience: local & immigrant workers
+   Join Us — Band Clean Malta
+   Focus: Service labor (cleaning, pet sitting, ironing)
    Tone: professional, welcoming, transparent
    ─────────────────────────────────────────────── */
 
 const valueProps = [
   {
     icon: Globe,
-    title: 'Multicultural Environment',
+    title: 'Multicultural Team',
     description:
-      'Join a diverse team from across the globe. We celebrate every background and language.',
+      'Work alongside people from all over the world in a respectful, inclusive environment.',
   },
   {
     icon: Award,
-    title: 'European-Standard Training',
+    title: 'Hands-On Training',
     description:
-      'Receive hands-on training in the latest cleaning techniques & safety protocols.',
+      'We train you on professional cleaning, ironing, pet care and European service standards.',
   },
   {
     icon: Clock,
     title: 'Flexible Hours & Fair Pay',
     description:
-      'We offer competitive wages, on-time payments and schedules that fit your life.',
+      'Choose shifts that fit your life. Competitive wages paid on time, every time.',
   },
   {
     icon: ShieldCheck,
-    title: 'Top-Quality Equipment',
+    title: 'All Equipment Provided',
     description:
-      'Work with professional-grade tools and eco-friendly products — all provided by us.',
+      'Professional-grade tools, eco-friendly products and uniforms — everything you need is on us.',
   },
 ];
 
+const serviceAreas = [
+  'Residential cleaning (apartments, villas, houses)',
+  'Office & commercial space cleaning',
+  'Condominium common areas & lobbies',
+  'Stairways, elevators & handrails',
+  'Ironing & laundry services',
+  'Pet sitting & pet care',
+];
+
 const responsibilities = [
-  'Deliver high-standard residential & commercial cleaning services',
-  'Organise and maintain cleaning supplies and equipment',
-  'Follow Band Clean protocols for hygiene and safety',
-  'Communicate professionally with clients and team members',
-  'Report any maintenance issues or supply needs promptly',
+  'Perform professional cleaning across homes, offices and common areas',
+  'Handle ironing, laundry and fabric care when assigned',
+  'Provide reliable pet sitting and basic pet care services',
+  'Maintain and organise cleaning supplies and equipment',
+  'Follow Band Clean service protocols and safety guidelines',
+  'Communicate clearly with clients and team members',
 ];
 
 const requirements = [
   'Basic to intermediate English communication skills',
-  'Proactive attitude and attention to detail',
+  'Reliable, proactive attitude with attention to detail',
   'Valid work permit / EU citizenship or Single Permit in Malta',
-  'Ability to work independently and as part of a team',
-  'Previous cleaning experience is a plus, but not required',
+  'Comfortable working independently and within a team',
+  'Experience is a plus but not required — we provide full training',
 ];
 
 const faqs = [
   {
-    q: 'Do I need previous cleaning experience?',
-    a: 'Not at all. We provide full training to every new team member. What matters most is a positive attitude and willingness to learn.',
+    q: 'Do I need previous experience in cleaning or pet sitting?',
+    a: 'No. We provide complete training for all our services — cleaning, ironing and pet care. A positive attitude and willingness to learn is what matters most.',
+  },
+  {
+    q: 'What types of jobs will I be doing?',
+    a: 'Depending on your skills and availability, you could be assigned to residential cleaning, office cleaning, condominium maintenance, ironing services or pet sitting.',
   },
   {
     q: 'How do contracts work in Malta?',
-    a: 'All our team members receive a formal employment contract compliant with Maltese labour law, including social security contributions, paid leave and public holidays.',
+    a: 'All team members receive a formal employment contract compliant with Maltese labour law, including social security contributions, paid leave and public holidays.',
   },
   {
-    q: 'Does Band Clean provide cleaning materials and transport?',
-    a: 'Yes. We supply all professional-grade equipment and eco-friendly products. Transport assistance may be available depending on your location and schedule.',
+    q: 'Does Band Clean provide materials and transport?',
+    a: 'Yes. We supply all professional-grade equipment, eco-friendly products and uniforms. Transport assistance may be available depending on your location and schedule.',
   },
 ];
 
