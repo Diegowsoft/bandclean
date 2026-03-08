@@ -35,66 +35,80 @@ import Footer from '@/components/Footer';
 import careersHero from '@/assets/careers-hero.jpg';
 
 /* ───────────────────────────────────────────────
-   Careers / Join Us — Band Clean Malta
-   Target audience: local & immigrant workers
+   Join Us — Band Clean Malta
+   Focus: Service labor (cleaning, pet sitting, ironing)
    Tone: professional, welcoming, transparent
    ─────────────────────────────────────────────── */
 
 const valueProps = [
   {
     icon: Globe,
-    title: 'Multicultural Environment',
+    title: 'Multicultural Team',
     description:
-      'Join a diverse team from across the globe. We celebrate every background and language.',
+      'Work alongside people from all over the world in a respectful, inclusive environment.',
   },
   {
     icon: Award,
-    title: 'European-Standard Training',
+    title: 'Hands-On Training',
     description:
-      'Receive hands-on training in the latest cleaning techniques & safety protocols.',
+      'We train you on professional cleaning, ironing, pet care and European service standards.',
   },
   {
     icon: Clock,
     title: 'Flexible Hours & Fair Pay',
     description:
-      'We offer competitive wages, on-time payments and schedules that fit your life.',
+      'Choose shifts that fit your life. Competitive wages paid on time, every time.',
   },
   {
     icon: ShieldCheck,
-    title: 'Top-Quality Equipment',
+    title: 'All Equipment Provided',
     description:
-      'Work with professional-grade tools and eco-friendly products — all provided by us.',
+      'Professional-grade tools, eco-friendly products and uniforms — everything you need is on us.',
   },
 ];
 
+const serviceAreas = [
+  'Residential cleaning (apartments, villas, houses)',
+  'Office & commercial space cleaning',
+  'Condominium common areas & lobbies',
+  'Stairways, elevators & handrails',
+  'Ironing & laundry services',
+  'Pet sitting & pet care',
+];
+
 const responsibilities = [
-  'Deliver high-standard residential & commercial cleaning services',
-  'Organise and maintain cleaning supplies and equipment',
-  'Follow Band Clean protocols for hygiene and safety',
-  'Communicate professionally with clients and team members',
-  'Report any maintenance issues or supply needs promptly',
+  'Perform professional cleaning across homes, offices and common areas',
+  'Handle ironing, laundry and fabric care when assigned',
+  'Provide reliable pet sitting and basic pet care services',
+  'Maintain and organise cleaning supplies and equipment',
+  'Follow Band Clean service protocols and safety guidelines',
+  'Communicate clearly with clients and team members',
 ];
 
 const requirements = [
   'Basic to intermediate English communication skills',
-  'Proactive attitude and attention to detail',
+  'Reliable, proactive attitude with attention to detail',
   'Valid work permit / EU citizenship or Single Permit in Malta',
-  'Ability to work independently and as part of a team',
-  'Previous cleaning experience is a plus, but not required',
+  'Comfortable working independently and within a team',
+  'Experience is a plus but not required — we provide full training',
 ];
 
 const faqs = [
   {
-    q: 'Do I need previous cleaning experience?',
-    a: 'Not at all. We provide full training to every new team member. What matters most is a positive attitude and willingness to learn.',
+    q: 'Do I need previous experience in cleaning or pet sitting?',
+    a: 'No. We provide complete training for all our services — cleaning, ironing and pet care. A positive attitude and willingness to learn is what matters most.',
+  },
+  {
+    q: 'What types of jobs will I be doing?',
+    a: 'Depending on your skills and availability, you could be assigned to residential cleaning, office cleaning, condominium maintenance, ironing services or pet sitting.',
   },
   {
     q: 'How do contracts work in Malta?',
-    a: 'All our team members receive a formal employment contract compliant with Maltese labour law, including social security contributions, paid leave and public holidays.',
+    a: 'All team members receive a formal employment contract compliant with Maltese labour law, including social security contributions, paid leave and public holidays.',
   },
   {
-    q: 'Does Band Clean provide cleaning materials and transport?',
-    a: 'Yes. We supply all professional-grade equipment and eco-friendly products. Transport assistance may be available depending on your location and schedule.',
+    q: 'Does Band Clean provide materials and transport?',
+    a: 'Yes. We supply all professional-grade equipment, eco-friendly products and uniforms. Transport assistance may be available depending on your location and schedule.',
   },
 ];
 
@@ -135,11 +149,12 @@ const Careers = () => {
             <Sparkles className="w-4 h-4" /> We're Hiring
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-            Build Your Career in Malta with an International Cleaning&nbsp;Team
+            Join Our Service Team in&nbsp;Malta
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-            We're looking for dedicated people to join our Professional Service
-            team. No matter where you come from — if you take pride in your work,
+            We're looking for dedicated people to help deliver professional
+            cleaning, ironing and pet sitting services across Malta.
+            No matter your background — if you take pride in your work,
             there's a place for you at Band&nbsp;Clean.
           </p>
           <Button size="lg" onClick={scrollToForm} className="cta-button gap-2 text-base">
@@ -153,11 +168,11 @@ const Careers = () => {
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-              Why Join Band&nbsp;Clean?
+              Why Work With Band&nbsp;Clean?
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              More than a job — it's a career built on respect, growth and
-              excellence.
+              A supportive workplace where you're valued, trained and equipped
+              to deliver excellent service.
             </p>
           </div>
 
@@ -187,11 +202,14 @@ const Careers = () => {
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-primary font-medium text-sm mb-2">
-              <Briefcase className="w-4 h-4" /> Open Position
+              <Briefcase className="w-4 h-4" /> What We're Looking For
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-              Professional Cleaning Specialist
+              Service Team Member
             </h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Cleaning · Ironing · Pet Sitting · Condominium Maintenance
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
