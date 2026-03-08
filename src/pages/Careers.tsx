@@ -149,11 +149,12 @@ const Careers = () => {
             <Sparkles className="w-4 h-4" /> We're Hiring
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-            Build Your Career in Malta with an International Cleaning&nbsp;Team
+            Join Our Service Team in&nbsp;Malta
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-            We're looking for dedicated people to join our Professional Service
-            team. No matter where you come from — if you take pride in your work,
+            We're looking for dedicated people to help deliver professional
+            cleaning, ironing and pet sitting services across Malta.
+            No matter your background — if you take pride in your work,
             there's a place for you at Band&nbsp;Clean.
           </p>
           <Button size="lg" onClick={scrollToForm} className="cta-button gap-2 text-base">
@@ -167,11 +168,11 @@ const Careers = () => {
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-              Why Join Band&nbsp;Clean?
+              Why Work With Band&nbsp;Clean?
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              More than a job — it's a career built on respect, growth and
-              excellence.
+              A supportive workplace where you're valued, trained and equipped
+              to deliver excellent service.
             </p>
           </div>
 
@@ -201,11 +202,14 @@ const Careers = () => {
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-primary font-medium text-sm mb-2">
-              <Briefcase className="w-4 h-4" /> Open Position
+              <Briefcase className="w-4 h-4" /> What We're Looking For
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-              Professional Cleaning Specialist
+              Service Team Member
             </h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Cleaning · Ironing · Pet Sitting · Condominium Maintenance
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
