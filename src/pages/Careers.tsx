@@ -176,7 +176,7 @@ const Careers = () => {
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         {/* Background image with dark overlay for text contrast */}
         <img
-          src={careersHero}
+          src={isMobile ? careersHeroMobile : careersHero}
           alt="Band Clean professional team collaborating"
           className="absolute inset-0 h-full w-full object-cover"
         />
