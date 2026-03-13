@@ -115,20 +115,54 @@ const faqs = [
 
 const Careers = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [permitStatus, setPermitStatus] = useState('');
+  const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const scrollToForm = () => {
     document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulated submission delay
-    setTimeout(() => {
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.append('access_key', '000b4570-d124-4bcd-b234-6c7a03f67125');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: 'Application Sent!',
+          description: 'Thank you for your interest. Our team will contact you soon.',
+          variant: 'default',
+        });
+        form.reset();
+        setPermitStatus('');
+      } else {
+        toast({
+          title: 'Error',
+          description: data.message || 'Something went wrong. Please try again.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to send application. Please check your connection and try again.',
+        variant: 'destructive',
+      });
+    } finally {
       setIsSubmitting(false);
-      setSubmitted(true);
-    }, 1800);
+    }
   };
 
   return (
