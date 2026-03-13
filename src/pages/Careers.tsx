@@ -34,6 +34,8 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import careersHero from '@/assets/careers-hero.jpg';
+import careersHeroMobile from '@/assets/careers-hero-mobile.jpg';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 /* ───────────────────────────────────────────────
    Join Us — Band Clean Malta
@@ -118,6 +120,7 @@ const Careers = () => {
   const [permitStatus, setPermitStatus] = useState('');
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const isMobile = useIsMobile();
 
   const scrollToForm = () => {
     document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -173,7 +176,7 @@ const Careers = () => {
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         {/* Background image with dark overlay for text contrast */}
         <img
-          src={careersHero}
+          src={isMobile ? careersHeroMobile : careersHero}
           alt="Band Clean professional team collaborating"
           className="absolute inset-0 h-full w-full object-cover"
         />
