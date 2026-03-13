@@ -301,90 +301,79 @@ const Careers = () => {
             </p>
           </div>
 
-          {submitted ? (
-            <Card className="border-none shadow-medium text-center py-12">
-              <CardContent className="flex flex-col items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <CheckCircle2 className="w-8 h-8 text-primary" />
+          <Card className="border-none shadow-medium">
+            <CardContent className="pt-8 pb-8 px-6 md:px-8">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+                {/* Full Name */}
+                <div className="space-y-2">
+                  <Label htmlFor="fullName">Full Name *</Label>
+                  <Input id="fullName" name="name" placeholder="e.g. Maria Silva" required />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  Application Received!
-                </h3>
-                <p className="text-muted-foreground max-w-sm">
-                  Thank you for your interest. Our team will review your details
-                  and contact you soon.
-                </p>
-              </CardContent>
-            </Card>
-          ) : (
-            <Card className="border-none shadow-medium">
-              <CardContent className="pt-8 pb-8 px-6 md:px-8">
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  {/* Full Name */}
-                  <div className="space-y-2">
-                    <Label htmlFor="fullName">Full Name *</Label>
-                    <Input id="fullName" placeholder="e.g. Maria Silva" required />
-                  </div>
 
-                  {/* Email */}
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input id="email" type="email" placeholder="you@email.com" required />
-                  </div>
+                {/* Email */}
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input id="email" name="email" type="email" placeholder="you@email.com" required />
+                </div>
 
-                  {/* Phone */}
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="flex items-center gap-1.5">
-                      Phone Number (WhatsApp preferred)
-                      <Phone className="w-3.5 h-3.5 text-muted-foreground" />
-                    </Label>
-                    <Input id="phone" type="tel" placeholder="+356 ..." />
-                  </div>
+                {/* Phone */}
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="flex items-center gap-1.5">
+                    Phone Number (WhatsApp preferred)
+                    <Phone className="w-3.5 h-3.5 text-muted-foreground" />
+                  </Label>
+                  <Input id="phone" name="phone" type="tel" placeholder="+356 ..." />
+                </div>
 
-                  {/* Work Permit Status */}
-                  <div className="space-y-2">
-                    <Label>Work Permit Status *</Label>
-                    <Select required>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select your status" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="eu-citizen">EU Citizen</SelectItem>
-                        <SelectItem value="single-permit">Single Permit Holder</SelectItem>
-                        <SelectItem value="needs-sponsorship">Needs Visa Sponsorship</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Experience / Message */}
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Brief Experience / Message</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell us a little about yourself — previous experience, availability, etc."
-                      rows={4}
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="cta-button w-full gap-2"
-                    disabled={isSubmitting}
+                {/* Work Permit Status */}
+                <div className="space-y-2">
+                  <Label>Work Permit Status *</Label>
+                  <Select
+                    name="permit_status"
+                    value={permitStatus}
+                    onValueChange={setPermitStatus}
+                    required
                   >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" /> Submitting…
-                      </>
-                    ) : (
-                      'Submit Application'
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          )}
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select your status" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="eu-citizen">EU Citizen</SelectItem>
+                      <SelectItem value="single-permit">Single Permit Holder</SelectItem>
+                      <SelectItem value="needs-sponsorship">Needs Visa Sponsorship</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Experience / Message */}
+                <div className="space-y-2">
+                  <Label htmlFor="message">Brief Experience / Message</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us a little about yourself — previous experience, availability, etc."
+                    rows={4}
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="cta-button w-full gap-2"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" /> Sending...
+                    </>
+                  ) : (
+                    'Submit Application'
+                  )}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
