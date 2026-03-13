@@ -120,6 +120,7 @@ const Careers = () => {
   const [permitStatus, setPermitStatus] = useState('');
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const isMobile = useIsMobile();
 
   const scrollToForm = () => {
     document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
