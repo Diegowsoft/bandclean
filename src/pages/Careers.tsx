@@ -34,6 +34,8 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import careersHero from '@/assets/careers-hero.jpg';
+import careersHeroMobile from '@/assets/careers-hero-mobile.jpg';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 /* ───────────────────────────────────────────────
    Join Us — Band Clean Malta
