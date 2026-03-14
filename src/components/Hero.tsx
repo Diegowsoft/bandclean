@@ -8,6 +8,8 @@ import heroSlide2 from '@/assets/hero-slide-2.jpg';
 import heroSlide3 from '@/assets/hero-slide-3.jpg';
 import heroSlide4 from '@/assets/hero-slide-4.jpg';
 import heroSlide5 from '@/assets/hero-slide-5.jpg';
+import heroSlide6 from '@/assets/hero-slide-6.jpg';
+import heroSlide7 from '@/assets/hero-slide-7.jpg';
 
 const Hero = () => {
   const handleBooking = () => {
@@ -20,8 +22,10 @@ const Hero = () => {
     { image: heroSlide1, title: "House Cleaning", description: "We make your home shine with professional deep cleaning, leaving every room fresh and spotless." },
     { image: heroSlide2, title: "Office Cleaning", description: "A clean workspace boosts productivity. We keep your office pristine so you can focus on business." },
     { image: heroSlide3, title: "Cleaning of Common Areas", description: "Lobbies, hallways and shared spaces maintained to the highest standard for a welcoming environment." },
-    { image: heroSlide4, title: "Airbnb Turnover", description: "Fast, reliable turnovers that guarantee 5-star reviews from every guest, every time." },
-    { image: heroSlide5, title: "Ironing Service", description: "Perfectly pressed clothes delivered with care. Save time and always look your best." }
+    { image: heroSlide4, title: "Cleaning of Common Areas", description: "Elevators, staircases and corridors kept spotless for a safe and pleasant experience every day." },
+    { image: heroSlide5, title: "Ironing Service", description: "Perfectly pressed clothes delivered with care. Save time and always look your best." },
+    { image: heroSlide6, title: "Pet Sitting", description: "Your furry friends in loving hands. We provide companionship and care while you're away." },
+    { image: heroSlide7, title: "Pet Sitting", description: "Walks, playtime and attention — your pets deserve the best care when you can't be there." },
   ];
 
   return (
