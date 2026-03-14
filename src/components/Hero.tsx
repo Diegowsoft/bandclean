@@ -23,9 +23,9 @@ const Hero = () => {
     { image: heroSlide2, title: "Office Cleaning", description: "A clean workspace boosts productivity. We keep your office pristine so you can focus on business." },
     { image: heroSlide3, title: "Cleaning of Common Areas", description: "Lobbies, hallways and shared spaces maintained to the highest standard for a welcoming environment." },
     { image: heroSlide4, title: "Cleaning of Common Areas", description: "Elevators, staircases and corridors kept spotless for a safe and pleasant experience every day." },
-    { image: heroSlide5, title: "Ironing Service", description: "Perfectly pressed clothes delivered with care. Save time and always look your best." },
+    { image: heroSlide5, title: "Cleaning of Common Areas", description: "Stairs, handrails and communal spaces cleaned with care for residents and visitors alike." },
     { image: heroSlide6, title: "Pet Sitting", description: "Your furry friends in loving hands. We provide companionship and care while you're away." },
-    { image: heroSlide7, title: "Pet Sitting", description: "Walks, playtime and attention — your pets deserve the best care when you can't be there." },
+    { image: heroSlide7, title: "Ironing Service", description: "Perfectly pressed clothes delivered with care. Save time and always look your best." },
   ];
 
   return (
