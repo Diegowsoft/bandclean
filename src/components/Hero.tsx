@@ -17,11 +17,11 @@ const Hero = () => {
   };
 
   const heroSlides = [
-    { image: heroSlide1, title: "Pristine Living Spaces" },
-    { image: heroSlide2, title: "Spotless Offices" },
-    { image: heroSlide3, title: "Elegant Common Areas" },
-    { image: heroSlide4, title: "Clean Elevators & Lobbies" },
-    { image: heroSlide5, title: "Stairs & Handrails" }
+    { image: heroSlide1, title: "House Cleaning", description: "We make your home shine with professional deep cleaning, leaving every room fresh and spotless." },
+    { image: heroSlide2, title: "Office Cleaning", description: "A clean workspace boosts productivity. We keep your office pristine so you can focus on business." },
+    { image: heroSlide3, title: "Cleaning of Common Areas", description: "Lobbies, hallways and shared spaces maintained to the highest standard for a welcoming environment." },
+    { image: heroSlide4, title: "Airbnb Turnover", description: "Fast, reliable turnovers that guarantee 5-star reviews from every guest, every time." },
+    { image: heroSlide5, title: "Ironing Service", description: "Perfectly pressed clothes delivered with care. Save time and always look your best." }
   ];
 
   return (
@@ -58,13 +58,16 @@ const Hero = () => {
                 {/* Content Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white max-w-4xl mx-auto px-4">
+                    <p className="text-sm md:text-base uppercase tracking-widest text-white/70 mb-4 font-medium">
+                      {slide.title}
+                    </p>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                       A cleaning service{' '}
                       <span className="text-white">tailored to your needs</span>
                     </h1>
                     
-                    <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
-                      Professional, reliable cleaning services across Malta. Experience spotless results with sophisticated attention to detail.
+                    <p className="text-lg md:text-xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
+                      {slide.description}
                     </p>
                     
                     <Button 
