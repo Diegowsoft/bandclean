@@ -17,11 +17,11 @@ const Hero = () => {
   };
 
   const heroSlides = [
-    { image: heroSlide1, title: "Pristine Living Spaces" },
-    { image: heroSlide2, title: "Spotless Offices" },
-    { image: heroSlide3, title: "Elegant Common Areas" },
-    { image: heroSlide4, title: "Clean Elevators & Lobbies" },
-    { image: heroSlide5, title: "Stairs & Handrails" }
+    { image: heroSlide1, title: "House Cleaning", description: "We make your home shine with professional deep cleaning, leaving every room fresh and spotless." },
+    { image: heroSlide2, title: "Office Cleaning", description: "A clean workspace boosts productivity. We keep your office pristine so you can focus on business." },
+    { image: heroSlide3, title: "Cleaning of Common Areas", description: "Lobbies, hallways and shared spaces maintained to the highest standard for a welcoming environment." },
+    { image: heroSlide4, title: "Airbnb Turnover", description: "Fast, reliable turnovers that guarantee 5-star reviews from every guest, every time." },
+    { image: heroSlide5, title: "Ironing Service", description: "Perfectly pressed clothes delivered with care. Save time and always look your best." }
   ];
 
   return (
